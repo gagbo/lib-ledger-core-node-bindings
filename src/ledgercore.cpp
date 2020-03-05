@@ -73,6 +73,15 @@
 #include "NJSDatabaseBackendCpp.hpp"
 #include "NJSRandomNumberGenerator.hpp"
 #include "NJSEthereumPublicKeyProvider.hpp"
+#include "NJSCosmosLikeMessageCpp.hpp"
+#include "NJSCosmosLikeTransactionCpp.hpp"
+#include "NJSCosmosLikeOperationCpp.hpp"
+#include "NJSCosmosLikeBlockCpp.hpp"
+#include "NJSCosmosLikeTransactionBuilderCpp.hpp"
+#include "NJSCosmosLikeTransactionCallback.hpp"
+#include "NJSCosmosLikeAccountCpp.hpp"
+#include "NJSCosmosConfigurationDefaultsCpp.hpp"
+#include "NJSCosmosLikeWalletCpp.hpp"
 #include "NJSERC20LikeAccountCpp.hpp"
 #include "NJSBinaryCallback.hpp"
 #include "NJSERC20LikeOperationCpp.hpp"
@@ -94,6 +103,8 @@
 #include "NJSRippleLikeExtendedPublicKeyCpp.hpp"
 #include "NJSEthereumLikeAddressCpp.hpp"
 #include "NJSEthereumLikeExtendedPublicKeyCpp.hpp"
+#include "NJSCosmosLikeAddressCpp.hpp"
+#include "NJSCosmosLikeExtendedPublicKeyCpp.hpp"
 #include "NJSBitcoinLikeAddressCpp.hpp"
 #include "NJSBitcoinLikeExtendedPublicKeyCpp.hpp"
 #include "NJSAmountCpp.hpp"
@@ -207,6 +218,15 @@ static void initAll(Local<Object> target)
     NJSDatabaseBackend::Initialize(target);
     NJSRandomNumberGenerator::Initialize(target);
     NJSEthereumPublicKeyProvider::Initialize(target);
+    NJSCosmosLikeMessage::Initialize(target);
+    NJSCosmosLikeTransaction::Initialize(target);
+    NJSCosmosLikeOperation::Initialize(target);
+    NJSCosmosLikeBlock::Initialize(target);
+    NJSCosmosLikeTransactionBuilder::Initialize(target);
+    NJSCosmosLikeTransactionCallback::Initialize(target);
+    NJSCosmosLikeAccount::Initialize(target);
+    NJSCosmosConfigurationDefaults::Initialize(target);
+    NJSCosmosLikeWallet::Initialize(target);
     NJSERC20LikeAccount::Initialize(target);
     NJSBinaryCallback::Initialize(target);
     NJSERC20LikeOperation::Initialize(target);
@@ -228,6 +248,8 @@ static void initAll(Local<Object> target)
     NJSRippleLikeExtendedPublicKey::Initialize(target);
     NJSEthereumLikeAddress::Initialize(target);
     NJSEthereumLikeExtendedPublicKey::Initialize(target);
+    NJSCosmosLikeAddress::Initialize(target);
+    NJSCosmosLikeExtendedPublicKey::Initialize(target);
     NJSBitcoinLikeAddress::Initialize(target);
     NJSBitcoinLikeExtendedPublicKey::Initialize(target);
     NJSAmount::Initialize(target);

@@ -12,6 +12,7 @@
 #include "NJSAmountListCallback.hpp"
 #include "NJSBitcoinLikeAccountCpp.hpp"
 #include "NJSBlockCallback.hpp"
+#include "NJSCosmosLikeAccountCpp.hpp"
 #include "NJSErrorCodeCallback.hpp"
 #include "NJSEthereumLikeAccountCpp.hpp"
 #include "NJSEventBusCpp.hpp"
@@ -105,6 +106,12 @@ private:
     static NAN_METHOD(asBitcoinLikeAccount);
 
     /**
+     * Turn the account into an Cosmos one, allowing operations to be performed on the Cosmos
+     * network.
+     */
+    static NAN_METHOD(asCosmosLikeAccount);
+
+    /**
      * Turn the account into an Ethereum one, allowing operations to be performrd on the Ethereum
      * network.
      */
@@ -121,6 +128,12 @@ private:
      * @return bool
      */
     static NAN_METHOD(isInstanceOfBitcoinLikeAccount);
+
+    /**
+     * Check if account is a Cosmos one.
+     * @return bool
+     */
+    static NAN_METHOD(isInstanceOfCosmosLikeAccount);
 
     /**
      * Check if account is an Ethereum one.

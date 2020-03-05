@@ -7,6 +7,7 @@
 
 #include "../include/AccountCreationInfo.hpp"
 #include "../include/BitcoinLikeNetworkParameters.hpp"
+#include "../include/CosmosLikeNetworkParameters.hpp"
 #include "../include/Currency.hpp"
 #include "../include/CurrencyUnit.hpp"
 #include "../include/EthereumLikeNetworkParameters.hpp"
@@ -19,6 +20,7 @@
 #include "NJSAccountListCallback.hpp"
 #include "NJSBitcoinLikeWalletCpp.hpp"
 #include "NJSBlockCallback.hpp"
+#include "NJSCosmosLikeWalletCpp.hpp"
 #include "NJSDynamicObjectCpp.hpp"
 #include "NJSErrorCodeCallback.hpp"
 #include "NJSEventBusCpp.hpp"
@@ -128,6 +130,12 @@ private:
     static NAN_METHOD(asBitcoinLikeWallet);
 
     /**
+     * Convert wallet to a Cosmos one.
+     * @return CosmosWallet object
+     */
+    static NAN_METHOD(asCosmosLikeWallet);
+
+    /**
      * Get currency of wallet.
      * @return Currency object
      */
@@ -138,6 +146,12 @@ private:
      * @return bool
      */
     static NAN_METHOD(isInstanceOfBitcoinLikeWallet);
+
+    /**
+     * Tell whether wallet is a Cosmos one.
+     * @return bool
+     */
+    static NAN_METHOD(isInstanceOfCosmosLikeWallet);
 
     /**
      * Tell whether wallet is a Ethereum one.
