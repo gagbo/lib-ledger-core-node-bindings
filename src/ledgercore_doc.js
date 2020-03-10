@@ -2382,6 +2382,13 @@ declare class NJSEthereumLikeAccount
      */
     declare function getEstimatedGasLimit(address: string, callback: NJSBigIntCallback);
     /**
+     * Get estimated gas limit to set so the transaction will succeed
+     * The passed address could be EOA or contract
+     * This estimation is based on a dry-run on the node, and it will fail if the request is ill-formed
+     * Note: same note as above
+     */
+    declare function getDryRunGasLimit(address: string, request: EthereumGasLimitRequest, callback: NJSBigIntCallback);
+    /**
      * Get balance of ERC20 token
      * The passed address is an ERC20 account
      * Note: same note as above
