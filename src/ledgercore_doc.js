@@ -1870,17 +1870,17 @@ declare class NJSCosmosLikeMessage
      */
     static declare function unwrapMsgUndelegate(msg: NJSCosmosLikeMessage): CosmosLikeMsgUndelegate;
     /**
-     * Wrap the given CosmosLikeMsgRedelegate into a CosmosLikeMessage
+     * Wrap the given CosmosLikeMsgBeginRedelegate into a CosmosLikeMessage
      * @param msg The message you need to wrap.
      * @return CosmosLikeMessage A wrapped message.
      */
-    static declare function wrapMsgRedelegate(msg: CosmosLikeMsgRedelegate): NJSCosmosLikeMessage;
+    static declare function wrapMsgBeginRedelegate(msg: CosmosLikeMsgBeginRedelegate): NJSCosmosLikeMessage;
     /**
-     * Unwrap a message to a CosmosLikeMsgRedelegate
+     * Unwrap a message to a CosmosLikeMsgBeginRedelegate
      * @param msg The message to unwrap
-     * @return CosmosLikeMsgRedelegate the unwrapped message
+     * @return CosmosLikeMsgBeginRedelegate the unwrapped message
      */
-    static declare function unwrapMsgRedelegate(msg: NJSCosmosLikeMessage): CosmosLikeMsgRedelegate;
+    static declare function unwrapMsgBeginRedelegate(msg: NJSCosmosLikeMessage): CosmosLikeMsgBeginRedelegate;
     /**
      * Wrap the given CosmosLikeMsgSubmitProposal into a CosmosLikeMessage
      * @param msg The message you need to wrap.

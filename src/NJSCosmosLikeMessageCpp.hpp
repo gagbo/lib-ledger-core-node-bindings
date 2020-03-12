@@ -6,12 +6,12 @@
 
 
 #include "../include/CosmosLikeAmount.hpp"
+#include "../include/CosmosLikeMsgBeginRedelegate.hpp"
 #include "../include/CosmosLikeMsgCreateValidator.hpp"
 #include "../include/CosmosLikeMsgDelegate.hpp"
 #include "../include/CosmosLikeMsgDeposit.hpp"
 #include "../include/CosmosLikeMsgEditValidator.hpp"
 #include "../include/CosmosLikeMsgMultiSend.hpp"
-#include "../include/CosmosLikeMsgRedelegate.hpp"
 #include "../include/CosmosLikeMsgSend.hpp"
 #include "../include/CosmosLikeMsgSetWithdrawAddress.hpp"
 #include "../include/CosmosLikeMsgSubmitProposal.hpp"
@@ -102,18 +102,18 @@ private:
     static NAN_METHOD(unwrapMsgUndelegate);
 
     /**
-     * Wrap the given CosmosLikeMsgRedelegate into a CosmosLikeMessage
+     * Wrap the given CosmosLikeMsgBeginRedelegate into a CosmosLikeMessage
      * @param msg The message you need to wrap.
      * @return CosmosLikeMessage A wrapped message.
      */
-    static NAN_METHOD(wrapMsgRedelegate);
+    static NAN_METHOD(wrapMsgBeginRedelegate);
 
     /**
-     * Unwrap a message to a CosmosLikeMsgRedelegate
+     * Unwrap a message to a CosmosLikeMsgBeginRedelegate
      * @param msg The message to unwrap
-     * @return CosmosLikeMsgRedelegate the unwrapped message
+     * @return CosmosLikeMsgBeginRedelegate the unwrapped message
      */
-    static NAN_METHOD(unwrapMsgRedelegate);
+    static NAN_METHOD(unwrapMsgBeginRedelegate);
 
     /**
      * Wrap the given CosmosLikeMsgSubmitProposal into a CosmosLikeMessage

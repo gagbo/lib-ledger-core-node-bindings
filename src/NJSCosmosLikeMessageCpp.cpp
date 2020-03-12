@@ -309,12 +309,12 @@ NAN_METHOD(NJSCosmosLikeMessage::unwrapMsgUndelegate) {
     //Return result
     info.GetReturnValue().Set(arg_1);
 }
-NAN_METHOD(NJSCosmosLikeMessage::wrapMsgRedelegate) {
+NAN_METHOD(NJSCosmosLikeMessage::wrapMsgBeginRedelegate) {
 
     //Check if method called with right number of arguments
     if(info.Length() != 1)
     {
-        return Nan::ThrowError("NJSCosmosLikeMessage::wrapMsgRedelegate needs 1 arguments");
+        return Nan::ThrowError("NJSCosmosLikeMessage::wrapMsgBeginRedelegate needs 1 arguments");
     }
 
     //Check if parameters have correct types
@@ -342,10 +342,10 @@ NAN_METHOD(NJSCosmosLikeMessage::wrapMsgRedelegate) {
     auto arg_0_4_2 = std::string(*string_arg_0_4_2);
     CosmosLikeAmount arg_0_4(arg_0_4_1, arg_0_4_2);
 
-    CosmosLikeMsgRedelegate arg_0(arg_0_1, arg_0_2, arg_0_3, arg_0_4);
+    CosmosLikeMsgBeginRedelegate arg_0(arg_0_1, arg_0_2, arg_0_3, arg_0_4);
 
 
-    auto result = ledger::core::api::CosmosLikeMessage::wrapMsgRedelegate(arg_0);
+    auto result = ledger::core::api::CosmosLikeMessage::wrapMsgBeginRedelegate(arg_0);
 
     //Wrap result in node object
     auto arg_1 = NJSCosmosLikeMessage::wrap(result);
@@ -354,12 +354,12 @@ NAN_METHOD(NJSCosmosLikeMessage::wrapMsgRedelegate) {
     //Return result
     info.GetReturnValue().Set(arg_1);
 }
-NAN_METHOD(NJSCosmosLikeMessage::unwrapMsgRedelegate) {
+NAN_METHOD(NJSCosmosLikeMessage::unwrapMsgBeginRedelegate) {
 
     //Check if method called with right number of arguments
     if(info.Length() != 1)
     {
-        return Nan::ThrowError("NJSCosmosLikeMessage::unwrapMsgRedelegate needs 1 arguments");
+        return Nan::ThrowError("NJSCosmosLikeMessage::unwrapMsgBeginRedelegate needs 1 arguments");
     }
 
     //Check if parameters have correct types
@@ -371,7 +371,7 @@ NAN_METHOD(NJSCosmosLikeMessage::unwrapMsgRedelegate) {
     }
 
 
-    auto result = ledger::core::api::CosmosLikeMessage::unwrapMsgRedelegate(arg_0);
+    auto result = ledger::core::api::CosmosLikeMessage::unwrapMsgBeginRedelegate(arg_0);
 
     //Wrap result in node object
     auto arg_1 = Nan::New<Object>();
@@ -1593,8 +1593,8 @@ void NJSCosmosLikeMessage::Initialize(Local<Object> target) {
     Nan::SetPrototypeMethod(func_template,"unwrapMsgDelegate", unwrapMsgDelegate);
     Nan::SetPrototypeMethod(func_template,"wrapMsgUndelegate", wrapMsgUndelegate);
     Nan::SetPrototypeMethod(func_template,"unwrapMsgUndelegate", unwrapMsgUndelegate);
-    Nan::SetPrototypeMethod(func_template,"wrapMsgRedelegate", wrapMsgRedelegate);
-    Nan::SetPrototypeMethod(func_template,"unwrapMsgRedelegate", unwrapMsgRedelegate);
+    Nan::SetPrototypeMethod(func_template,"wrapMsgBeginRedelegate", wrapMsgBeginRedelegate);
+    Nan::SetPrototypeMethod(func_template,"unwrapMsgBeginRedelegate", unwrapMsgBeginRedelegate);
     Nan::SetPrototypeMethod(func_template,"wrapMsgSubmitProposal", wrapMsgSubmitProposal);
     Nan::SetPrototypeMethod(func_template,"unwrapMsgSubmitProposal", unwrapMsgSubmitProposal);
     Nan::SetPrototypeMethod(func_template,"wrapMsgVote", wrapMsgVote);
